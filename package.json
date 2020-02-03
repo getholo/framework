@@ -1,0 +1,29 @@
+{
+  "name": "@getholo/framework",
+  "version": "0.1.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "rxjs": "^6.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^13.5.0",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "eslint": "^6.8.0",
+    "eslint-config-es": "^3.19.20",
+    "eslint-plugin-extended": "^0.2.0",
+    "eslint-plugin-mocha": "^6.2.2",
+    "eslint-plugin-unicorn": "^15.0.1",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "dev": "npm run build:clear && tsc --watch",
+    "build:clear": "rm -rf dist",
+    "build:js": "tsc",
+    "build": "npm run build:clear && npm run build:js",
+    "copy": "cp -f package.json dist && cp -f readme.md dist",
+    "dist": "npm run build && npm run copy && cd dist && npm publish"
+  }
+}
